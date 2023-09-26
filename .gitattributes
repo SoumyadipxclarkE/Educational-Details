@@ -1,2 +1,68 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+
+class Sdetails
+{
+   int sid;
+   String sname;
+   String sgender;
+   int age;
+   static String collegeName;
+   static String collegeAddress;
+   static int id;
+   static
+   {
+       id = 11000;
+   }
+    {
+        id++;
+        sid = id;
+    }
+    void sinfo(String sname, String sgender, int age)
+    {
+        this.sname = sname;
+        this.sgender = sgender;
+        this.age = age;
+    }
+    static void changeColN(String cn)
+    {
+        collegeName = cn;
+    }
+    static void changeColA(String ca)
+    {
+        collegeAddress = ca;
+    }
+    void display()
+    {
+        System.out.println("\nID: "+sid);
+        System.out.println("NAME: Dr. "+sname);
+        System.out.println("GENDER: "+sgender);
+        System.out.println("AGE: "+age);
+        System.out.println("College Name: "+collegeName);
+        System.out.println("College Address: "+collegeAddress+"\n");
+    }
+
+}
+public class StudentMain
+{
+    public static void main(String[] args)
+    {
+        Sdetails.collegeName = "MIT";
+        Sdetails.collegeAddress = "Massachusetts";
+        Sdetails s1 = new Sdetails();
+        s1.sinfo("AMAR","M",27);
+        s1.display();
+
+        Sdetails.collegeName = "STANFORD";
+        Sdetails.collegeAddress = "California";
+        Sdetails s2 = new Sdetails();
+        s2.sinfo("TIM","M",26);
+        s2.display();
+
+        Sdetails.collegeName = "CAMBRIDGE";
+        Sdetails.collegeAddress = "CITY IN ENGLAND";
+        Sdetails s3 = new Sdetails();
+        s3.sinfo("JACK","M",25);
+        s3.display();
+
+    }
+
+}
